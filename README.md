@@ -38,7 +38,7 @@ qrcodegen "Hello World" -f pdf -o my_qrcode.pdf
 
 ## Dependencies
 
-- reportlab (for PDF and EPS formats)
+- reportlab
 
 ## License
 
