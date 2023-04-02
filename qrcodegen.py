@@ -13,7 +13,7 @@ def generate_qr_code(text, file_format="pdf", scale=1, error="M", file_name=None
     qr_code_drawing.height = qr_code_w.barHeight * scale
 
     if file_name is None:
-        file_name = f"{text.replace(' ', '_')}.{file_format}"
+        file_name = f"{text.replace(' ', '_').replace('/','_')}.{file_format}"
     if file_format == "pdf":
         renderPDF.drawToFile(qr_code_drawing, file_name)
     elif file_format == "eps":
