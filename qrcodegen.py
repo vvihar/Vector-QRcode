@@ -1,10 +1,13 @@
 import argparse
+
 from reportlab.graphics import renderPDF, renderPM
-from reportlab.graphics.shapes import Drawing
 from reportlab.graphics.barcode.qr import QrCodeWidget
+from reportlab.graphics.shapes import Drawing
 
 
-def generate_qr_code(text, file_format="pdf", scale=1, error="M", file_name=None):
+def generate_qr_code(
+    text, file_format="pdf", scale=1, error="M", file_name=None
+):
     qr_code_w = QrCodeWidget(text, barLevel=error)
     qr_code_drawing = Drawing(0, 0, transform=[scale, 0, 0, scale, 0, 0])
     qr_code_drawing.add(qr_code_w)
@@ -25,8 +28,12 @@ def generate_qr_code(text, file_format="pdf", scale=1, error="M", file_name=None
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate QR Code in Vector Format")
-    parser.add_argument("text", type=str, help="Input Text for QR Code Generation")
+    parser = argparse.ArgumentParser(
+        description="Generate QR Code in Vector Format"
+    )
+    parser.add_argument(
+        "text", type=str, help="Input Text for QR Code Generation"
+    )
     parser.add_argument(
         "-f",
         "--format",
@@ -49,7 +56,9 @@ def main():
     parser.add_argument("-o", "--output", type=str, help="Output File Name")
 
     args = parser.parse_args()
-    generate_qr_code(args.text, args.format, args.scale, args.error, args.output)
+    generate_qr_code(
+        args.text, args.format, args.scale, args.error, args.output
+    )
 
 
 if __name__ == "__main__":
