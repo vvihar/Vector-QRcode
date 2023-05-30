@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "vector-qrcode"
+version = "0.1.0"
+description = "Command-line tool to generate QR codes in vector formats"
+authors = ["Gulmohar <92192914+vvihar@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+reportlab = "^4.0.0"
+argparse = "^1.4.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
